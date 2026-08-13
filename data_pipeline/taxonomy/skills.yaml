@@ -1,0 +1,301 @@
+abbreviations:
+  js: JavaScript
+  ts: TypeScript
+  py: Python
+  ml: Machine Learning
+  dl: Deep Learning
+  ai: Artificial Intelligence
+  nlp: NLP
+  cv: Computer Vision
+  db: Database
+  sql: SQL
+  k8s: Kubernetes
+  aws: AWS
+  gcp: GCP
+  plc: PLC
+  hmi: HMI
+  scada: SCADA
+  cad: CAD
+  be: Bachelor's
+  me: Master's
+  bsc: Bachelor's
+  msc: Master's
+  phd: PhD
+  yr: year
+  yrs: years
+  exp: experience
+  jr: Junior
+  sr: Senior
+
+categories:
+  Programming:
+    aliases: [coding, software development languages]
+    Python:
+      aliases: [python3, py]
+    C:
+      aliases: ["c language", "c programming"]
+    C++:
+      aliases: [cpp, "c plus plus"]
+    Java:
+      aliases: []
+    JavaScript:
+      aliases: [js, "java script"]
+    TypeScript:
+      aliases: [ts]
+    MATLAB:
+      aliases: [matlab]
+    C#:
+      aliases: [csharp, "c sharp", ".net"]
+    Go:
+      aliases: [golang]
+    Rust:
+      aliases: []
+    R:
+      aliases: ["r language", "r programming"]
+    Kotlin:
+      aliases: []
+    Swift:
+      aliases: []
+    PHP:
+      aliases: []
+
+  Web Development:
+    aliases: [web dev, frontend, backend, full stack]
+    React:
+      aliases: [reactjs, react.js]
+    Next.js:
+      aliases: [nextjs, next]
+    Node.js:
+      aliases: [nodejs, node]
+    Laravel:
+      aliases: []
+    Angular:
+      aliases: [angularjs]
+    Vue.js:
+      aliases: [vue, vuejs]
+    HTML:
+      aliases: [html5]
+    CSS:
+      aliases: [css3, sass, scss, tailwind]
+    Django:
+      aliases: []
+    Flask:
+      aliases: []
+    FastAPI:
+      aliases: []
+    Express:
+      aliases: [expressjs]
+
+  Data:
+    aliases: [data engineering, databases, analytics]
+    SQL:
+      aliases: [structured query language]
+    PostgreSQL:
+      aliases: [postgres, psql]
+    MySQL:
+      aliases: []
+    MongoDB:
+      aliases: [mongo]
+    Power BI:
+      aliases: [powerbi]
+    Tableau:
+      aliases: []
+    Excel:
+      aliases: [microsoft excel, spreadsheet]
+    Pandas:
+      aliases: []
+    Spark:
+      aliases: [apache spark, pyspark]
+    ETL:
+      aliases: []
+    Data Analysis:
+      aliases: [data analytics]
+
+  AI / Machine Learning:
+    aliases: [artificial intelligence, machine learning, deep learning]
+    Machine Learning:
+      aliases: [ml]
+    Deep Learning:
+      aliases: [dl, neural networks]
+    PyTorch:
+      aliases: [torch]
+    TensorFlow:
+      aliases: [tf, keras]
+    Computer Vision:
+      aliases: [opencv, image processing]
+    NLP:
+      aliases: [natural language processing, text mining]
+    Scikit-learn:
+      aliases: [sklearn, scikit learn]
+    LLMs:
+      aliases: [large language models, chatgpt, generative ai]
+
+  Industrial Automation:
+    aliases: [automation, industrial control, factory automation]
+    PLC:
+      aliases: [programmable logic controller, plcs]
+    Siemens PLC:
+      aliases: [siemens, siemens s7, s7-1200, s7-1500]
+    TIA Portal:
+      aliases: [tia, totalling integrated automation]
+    SCADA:
+      aliases: []
+    HMI:
+      aliases: [human machine interface]
+    Modbus:
+      aliases: []
+    Industrial Networking:
+      aliases: [profinet, industrial ethernet, fieldbus, industrial communication, industrial communication protocols]
+    Allen-Bradley:
+      aliases: [rockwell, compactlogix, controllogix]
+    Instrumentation:
+      aliases: [sensors, transmitters]
+
+  Mechanical Engineering:
+    aliases: [mechanical design]
+    SolidWorks:
+      aliases: [solid works]
+    AutoCAD:
+      aliases: [autocad, auto cad, cad]
+    CATIA:
+      aliases: []
+    ANSYS:
+      aliases: [finite element analysis, fea]
+    Inventor:
+      aliases: [autodesk inventor]
+    GD&T:
+      aliases: [geometric dimensioning]
+    CNC:
+      aliases: [cnc machining]
+
+  Electrical Engineering:
+    aliases: [electrical]
+    Circuit Design:
+      aliases: [pcb design, electronics design]
+    Power Systems:
+      aliases: [power distribution]
+    Embedded Systems:
+      aliases: [embedded, microcontroller]
+    Arduino:
+      aliases: []
+    Raspberry Pi:
+      aliases: [rpi]
+    PCB:
+      aliases: [printed circuit board]
+    MATLAB Simulink:
+      aliases: [simulink]
+
+  Mechatronics / Robotics:
+    aliases: [mechatronics, robotics]
+    ROS:
+      aliases: [robot operating system, ros2]
+    Control Systems:
+      aliases: [pid control, feedback control]
+    Sensors:
+      aliases: [sensor fusion]
+    Actuators:
+      aliases: []
+    Robotics:
+      aliases: [industrial robots, collaborative robots]
+
+  Cybersecurity:
+    aliases: [information security, infosec]
+    Network Security:
+      aliases: []
+    Penetration Testing:
+      aliases: [pentest, ethical hacking]
+    OWASP:
+      aliases: []
+    Cryptography:
+      aliases: []
+    SIEM:
+      aliases: []
+
+  Cloud / DevOps:
+    aliases: [devops, cloud computing]
+    AWS:
+      aliases: [amazon web services]
+    Azure:
+      aliases: [microsoft azure]
+    GCP:
+      aliases: [google cloud]
+    Docker:
+      aliases: [containers]
+    Kubernetes:
+      aliases: [k8s]
+    CI/CD:
+      aliases: [jenkins, github actions, gitlab ci]
+    Linux:
+      aliases: [unix]
+    Git:
+      aliases: [github, gitlab, version control]
+
+  Business / Soft Skills:
+    aliases: [soft skills, professional skills]
+    Communication:
+      aliases: [verbal communication, written communication, communication skills]
+    Leadership:
+      aliases: [team leadership, leadership skills]
+    Project Management:
+      aliases: [pmp, agile, scrum, project management]
+    Problem Solving:
+      aliases: [problem-solving, analytical thinking]
+    Teamwork:
+      aliases: [collaboration, team player]
+    Sales:
+      aliases: [business development, sales skills]
+    Marketing:
+      aliases: [digital marketing, seo, marketing skills]
+    Accounting:
+      aliases: [bookkeeping, finance accounting]
+    Excel VBA:
+      aliases: [vba]
+    Customer Service:
+      aliases: [client service, customer support]
+
+  Languages:
+    aliases: [spoken languages]
+    Arabic:
+      aliases: [عربي, arabic language]
+    English:
+      aliases: [english language]
+    French:
+      aliases: [francais, français]
+
+job_categories:
+  - Computer Engineering
+  - Software Engineering
+  - Data Science
+  - Artificial Intelligence
+  - Cybersecurity
+  - Web Development
+  - Electrical Engineering
+  - Electronics Engineering
+  - Mechanical Engineering
+  - Mechatronics Engineering
+  - Automation Engineering
+  - Robotics
+  - Civil Engineering
+  - Architecture
+  - Other
+
+lebanese_locations:
+  - Beirut
+  - Mount Lebanon
+  - Jounieh
+  - Byblos
+  - Jbeil
+  - Tripoli
+  - Zahle
+  - Sidon
+  - Saida
+  - Tyre
+  - Sour
+  - Baalbek
+  - Nabatieh
+  - Keserwan
+  - Metn
+  - Aley
+  - Chouf
+  - Remote
+  - Lebanon

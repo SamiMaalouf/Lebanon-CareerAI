@@ -1,0 +1,1987 @@
+[
+  {
+    "profile_id": "cand_mechatronics",
+    "candidate": {
+      "skills": [
+        "Python",
+        "MATLAB",
+        "SolidWorks",
+        "ROS",
+        "Arduino",
+        "Computer Vision",
+        "PLC"
+      ],
+      "education_level": "Bachelor's",
+      "education_fields": [
+        "Mechatronics Engineering"
+      ],
+      "experience_level": "Internship",
+      "target_categories": [
+        "Automation Engineering",
+        "Mechatronics Engineering",
+        "Robotics",
+        "Mechanical Engineering",
+        "Electrical Engineering"
+      ],
+      "languages": [
+        "English",
+        "Arabic",
+        "French"
+      ]
+    },
+    "relevance": {
+      "jl_31983f987e3dad": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jl_f17c3c717d3a8d": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jl_e6c3285997a9ca": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jl_fe1f74e858d731": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_da8ca8eaeeb94007": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_ff0341f6c28e440d": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_942d470c173b400d": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_cd1611e0c2e24b28": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_79a67b2e3f254bfe": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_56e534f5c1ce46b7": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_3015406f5af04f37": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_2f2994f0ceba4c46": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_27226c80283d4910": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_90ffe744362e49a5": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_734ba251fb474f69": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_29fe67a8b13247b5": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_cca69a99cf194a1d": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_5f77f266081a4e29": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_3f267d37135b4614": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_fe1a8d0436ad4ce6": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_b6f4b64c7b8845b3": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_36a615753ae94dc4": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_e2ae3058896b4324": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_24c22ee3bd4d4eb3": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_610372a45c104e17": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_a8e78d6f5c714417": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_6cc26c44840a449f": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_82f4ab679ad24a99": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_b2a42335d6d24f1a": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_dfd996220b954c41": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_69769ff6518c4026": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_b90d30fa6a7e4313": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_f3bb9ecf852144a5": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_a9e9f9c492544800": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_30a9158f0c204203": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_69a5935d43004b29": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_034de70d97e04cad": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_96aa047b291c428d": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_9a5644dd94084d96": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_b0e77d2c27554f29": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_01beb3dcec5147cc": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_7f7bb829d6ba443e": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_e3af29db94f64d82": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_927de29a16074e9b": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_ef01976ee3364bd0": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_ddc2dee464e24483": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_83da11f9ee3740ad": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_ce747e98e6314b33": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_e5e2e64917dd434d": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_9e85eaf2601a4485": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_97bc6a88374d43b8": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_bdf91f1d23844c36": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_12f3b24d2ca04251": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_270b1d2d62f94b67": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_151d5d2d72e24ce7": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_5ce8a49d25bc405b": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_76e8d7a8520e463f": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_1dc2d8a962654c0a": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_735328f3f9c34317": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_252481fe35eb4123": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_49e90dc0b96e4f9b": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_957df2e84fc940f6": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_b9a8a1a1dba4479b": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_a21283bf26704cb8": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_53a9785a4de14663": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_e5e392616bac4368": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_f46d475fabda445e": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_1334c087278143c9": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_9fda4c7bcd9b4bb9": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_c02c8d3430454c1a": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_95aa376d6b1d406a": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_5ac9e450c9a349c3": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_a3214eabc8dc47d2": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_3e055cf8396f4efd": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_283e19fae96843c0": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_6b834e6170c247b6": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_a51f16afe3f942e5": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_169c998c52c14a3e": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_d3d60293de7d42bf": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_1972d2513dcf4bca": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284584": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284580": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_284578": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283824": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_279242": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284565": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284563": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284562": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284560": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284343": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_266576": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281447": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284281": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284448": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284524": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284428": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_248029": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_269018": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281784": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284086": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281588": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_278343": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_279643": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284414": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284393": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_282497": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283738": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283488": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283761": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284331": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284083": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283880": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_277185": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281223": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284318": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_275807": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_280544": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283584": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_278344": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_282822": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284253": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284247": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_282644": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_282503": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_280095": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281266": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283440": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281446": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283147": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283145": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283143": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283142": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283137": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283136": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284207": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283869": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284181": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_284165": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281845": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281846": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281862": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281861": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281858": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281857": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281863": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_283727": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283726": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284141": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284140": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284137": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283110": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_282998": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284112": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284065": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284002": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281726": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_278302": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284066": {
+        "label": "Relevant",
+        "score": 1.0
+      }
+    }
+  },
+  {
+    "profile_id": "cand_software",
+    "candidate": {
+      "skills": [
+        "Python",
+        "JavaScript",
+        "React",
+        "SQL",
+        "Git",
+        "Docker"
+      ],
+      "education_level": "Bachelor's",
+      "education_fields": [
+        "Computer Science"
+      ],
+      "experience_level": "0-2 years",
+      "target_categories": [
+        "Software Engineering",
+        "Web Development",
+        "Data Science"
+      ],
+      "languages": [
+        "English",
+        "Arabic"
+      ]
+    },
+    "relevance": {
+      "jl_31983f987e3dad": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jl_f17c3c717d3a8d": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jl_e6c3285997a9ca": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jl_fe1f74e858d731": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_da8ca8eaeeb94007": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_ff0341f6c28e440d": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_942d470c173b400d": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_cd1611e0c2e24b28": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_79a67b2e3f254bfe": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_56e534f5c1ce46b7": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_3015406f5af04f37": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_2f2994f0ceba4c46": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_27226c80283d4910": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_90ffe744362e49a5": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_734ba251fb474f69": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_29fe67a8b13247b5": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_cca69a99cf194a1d": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_5f77f266081a4e29": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_3f267d37135b4614": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_fe1a8d0436ad4ce6": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_b6f4b64c7b8845b3": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_36a615753ae94dc4": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_e2ae3058896b4324": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_24c22ee3bd4d4eb3": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_610372a45c104e17": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_a8e78d6f5c714417": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_6cc26c44840a449f": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_82f4ab679ad24a99": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_b2a42335d6d24f1a": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_dfd996220b954c41": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_69769ff6518c4026": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_b90d30fa6a7e4313": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_f3bb9ecf852144a5": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_a9e9f9c492544800": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_30a9158f0c204203": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_69a5935d43004b29": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_034de70d97e04cad": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_96aa047b291c428d": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_9a5644dd94084d96": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_b0e77d2c27554f29": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_01beb3dcec5147cc": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_7f7bb829d6ba443e": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_e3af29db94f64d82": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_927de29a16074e9b": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_ef01976ee3364bd0": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_ddc2dee464e24483": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_83da11f9ee3740ad": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_ce747e98e6314b33": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_e5e2e64917dd434d": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_9e85eaf2601a4485": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_97bc6a88374d43b8": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_bdf91f1d23844c36": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_12f3b24d2ca04251": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_270b1d2d62f94b67": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_151d5d2d72e24ce7": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_5ce8a49d25bc405b": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_76e8d7a8520e463f": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_1dc2d8a962654c0a": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_735328f3f9c34317": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_252481fe35eb4123": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_49e90dc0b96e4f9b": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_957df2e84fc940f6": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_b9a8a1a1dba4479b": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_a21283bf26704cb8": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_53a9785a4de14663": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_e5e392616bac4368": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_f46d475fabda445e": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_1334c087278143c9": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_9fda4c7bcd9b4bb9": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_c02c8d3430454c1a": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_95aa376d6b1d406a": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_5ac9e450c9a349c3": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_a3214eabc8dc47d2": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_3e055cf8396f4efd": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_283e19fae96843c0": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_6b834e6170c247b6": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_a51f16afe3f942e5": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_169c998c52c14a3e": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_d3d60293de7d42bf": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_1972d2513dcf4bca": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284584": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284580": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284578": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283824": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_279242": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284565": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284563": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284562": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284560": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284343": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_266576": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281447": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284281": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284448": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284524": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284428": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_248029": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_269018": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281784": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284086": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281588": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_278343": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_279643": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284414": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284393": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_282497": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_283738": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283488": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283761": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284331": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284083": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283880": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_277185": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281223": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284318": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_275807": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_280544": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283584": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_278344": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_282822": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284253": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284247": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_282644": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_282503": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_280095": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281266": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283440": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281446": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283147": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283145": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283143": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283142": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283137": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283136": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284207": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283869": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_284181": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284165": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281845": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_281846": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_281862": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281861": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281858": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281857": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281863": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283727": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_283726": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_284141": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_284140": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_284137": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_283110": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_282998": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284112": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284065": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284002": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281726": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_278302": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284066": {
+        "label": "Not relevant",
+        "score": 0.0
+      }
+    }
+  },
+  {
+    "profile_id": "cand_civil",
+    "candidate": {
+      "skills": [
+        "AutoCAD",
+        "Revit",
+        "BIM",
+        "Project Management",
+        "Structural Analysis"
+      ],
+      "education_level": "Bachelor's",
+      "education_fields": [
+        "Civil Engineering"
+      ],
+      "experience_level": "0-2 years",
+      "target_categories": [
+        "Civil Engineering",
+        "Architecture"
+      ],
+      "languages": [
+        "English",
+        "Arabic"
+      ]
+    },
+    "relevance": {
+      "jl_31983f987e3dad": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jl_f17c3c717d3a8d": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jl_e6c3285997a9ca": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jl_fe1f74e858d731": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_da8ca8eaeeb94007": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_ff0341f6c28e440d": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_942d470c173b400d": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_cd1611e0c2e24b28": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_79a67b2e3f254bfe": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_56e534f5c1ce46b7": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_3015406f5af04f37": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_2f2994f0ceba4c46": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_27226c80283d4910": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_90ffe744362e49a5": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_734ba251fb474f69": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_29fe67a8b13247b5": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_cca69a99cf194a1d": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_5f77f266081a4e29": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_3f267d37135b4614": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_fe1a8d0436ad4ce6": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_b6f4b64c7b8845b3": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_36a615753ae94dc4": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_e2ae3058896b4324": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_24c22ee3bd4d4eb3": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_610372a45c104e17": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_a8e78d6f5c714417": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_6cc26c44840a449f": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_82f4ab679ad24a99": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_b2a42335d6d24f1a": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_dfd996220b954c41": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_69769ff6518c4026": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_b90d30fa6a7e4313": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_f3bb9ecf852144a5": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_a9e9f9c492544800": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_30a9158f0c204203": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_69a5935d43004b29": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_034de70d97e04cad": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_96aa047b291c428d": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_9a5644dd94084d96": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_b0e77d2c27554f29": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_01beb3dcec5147cc": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_7f7bb829d6ba443e": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_e3af29db94f64d82": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_927de29a16074e9b": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_ef01976ee3364bd0": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_ddc2dee464e24483": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_83da11f9ee3740ad": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_ce747e98e6314b33": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_e5e2e64917dd434d": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_9e85eaf2601a4485": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_97bc6a88374d43b8": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_bdf91f1d23844c36": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_12f3b24d2ca04251": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_270b1d2d62f94b67": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_151d5d2d72e24ce7": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_5ce8a49d25bc405b": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_76e8d7a8520e463f": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_1dc2d8a962654c0a": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_735328f3f9c34317": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_252481fe35eb4123": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_49e90dc0b96e4f9b": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_957df2e84fc940f6": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_b9a8a1a1dba4479b": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_a21283bf26704cb8": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_53a9785a4de14663": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_e5e392616bac4368": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_f46d475fabda445e": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_1334c087278143c9": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_9fda4c7bcd9b4bb9": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_c02c8d3430454c1a": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_95aa376d6b1d406a": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_5ac9e450c9a349c3": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_a3214eabc8dc47d2": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_3e055cf8396f4efd": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "jfl_283e19fae96843c0": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_6b834e6170c247b6": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_a51f16afe3f942e5": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_169c998c52c14a3e": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "jfl_d3d60293de7d42bf": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "jfl_1972d2513dcf4bca": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284584": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284580": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284578": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283824": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_279242": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284565": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284563": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284562": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284560": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284343": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_266576": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281447": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284281": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284448": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284524": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284428": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_248029": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_269018": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281784": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284086": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281588": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_278343": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_279643": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284414": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284393": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_282497": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283738": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283488": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283761": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284331": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284083": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_283880": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_277185": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281223": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284318": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_275807": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_280544": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283584": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_278344": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_282822": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_284253": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284247": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_282644": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_282503": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_280095": {
+        "label": "Highly relevant",
+        "score": 2.0
+      },
+      "hl_281266": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283440": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281446": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283147": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283145": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283143": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283142": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283137": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283136": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284207": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283869": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284181": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284165": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281845": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281846": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281862": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281861": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281858": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281857": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_281863": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283727": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_283726": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284141": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284140": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284137": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_283110": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_282998": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284112": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284065": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_284002": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_281726": {
+        "label": "Not relevant",
+        "score": 0.0
+      },
+      "hl_278302": {
+        "label": "Relevant",
+        "score": 1.0
+      },
+      "hl_284066": {
+        "label": "Relevant",
+        "score": 1.0
+      }
+    }
+  }
+]

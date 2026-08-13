@@ -1,0 +1,41 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: careerai
+      POSTGRES_PASSWORD: careerai
+      POSTGRES_DB: careerai
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U careerai -d careerai"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATABASE_URL: postgresql+psycopg://careerai:careerai@db:5432/careerai
+      CORS_ORIGINS: http://localhost:3000
+      EMBEDDING_MODEL: paraphrase-multilingual-MiniLM-L12-v2
+      USE_LLM_EXTRACTION: "false"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+      - ./data_pipeline:/app/data_pipeline
+      - ./raw_data:/app/raw_data
+      - ./processed_data:/app/processed_data
+      - ./models:/app/models
+      - ./evaluation:/app/evaluation
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

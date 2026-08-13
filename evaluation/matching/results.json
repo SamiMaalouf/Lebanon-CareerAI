@@ -1,0 +1,123 @@
+{
+  "keyword": {
+    "precision@5": 0.7333333333333334,
+    "recall@5": 0.043833147023575735,
+    "ndcg@5": 0.27845810715777114,
+    "mrr": 0.8333333333333334,
+    "precision@10": 0.6,
+    "recall@10": 0.07206411069820841,
+    "ndcg@10": 0.25925991319424074,
+    "f1@5": 0.08272180705098549
+  },
+  "semantic": {
+    "precision@5": 1.0,
+    "recall@5": 0.06388662295940462,
+    "ndcg@5": 0.47031858502859203,
+    "mrr": 1.0,
+    "precision@10": 1.0,
+    "recall@10": 0.12777324591880923,
+    "ndcg@10": 0.5470685018583789,
+    "f1@5": 0.12010043472807605
+  },
+  "per_profile_keyword": [
+    {
+      "profile": "cand_mechatronics",
+      "k": 5,
+      "precision": 1.0,
+      "recall": 0.0423728813559322,
+      "ndcg": 0.3333333333333333,
+      "mrr": 1.0
+    },
+    {
+      "profile": "cand_mechatronics",
+      "k": 10,
+      "precision": 0.8,
+      "recall": 0.06779661016949153,
+      "ndcg": 0.353184595764188,
+      "mrr": 1.0
+    },
+    {
+      "profile": "cand_software",
+      "k": 5,
+      "precision": 0.4,
+      "recall": 0.030303030303030304,
+      "ndcg": 0.1843821566693812,
+      "mrr": 1.0
+    },
+    {
+      "profile": "cand_software",
+      "k": 10,
+      "precision": 0.3,
+      "recall": 0.045454545454545456,
+      "ndcg": 0.14578415971677,
+      "mrr": 1.0
+    },
+    {
+      "profile": "cand_civil",
+      "k": 5,
+      "precision": 0.8,
+      "recall": 0.058823529411764705,
+      "ndcg": 0.3176588314705989,
+      "mrr": 0.5
+    },
+    {
+      "profile": "cand_civil",
+      "k": 10,
+      "precision": 0.7,
+      "recall": 0.10294117647058823,
+      "ndcg": 0.27881098410176414,
+      "mrr": 0.5
+    }
+  ],
+  "per_profile_semantic": [
+    {
+      "profile": "cand_mechatronics",
+      "k": 5,
+      "precision": 1.0,
+      "recall": 0.0423728813559322,
+      "ndcg": 0.3333333333333333,
+      "mrr": 1.0
+    },
+    {
+      "profile": "cand_mechatronics",
+      "k": 10,
+      "precision": 1.0,
+      "recall": 0.0847457627118644,
+      "ndcg": 0.4639594030703841,
+      "mrr": 1.0
+    },
+    {
+      "profile": "cand_software",
+      "k": 5,
+      "precision": 1.0,
+      "recall": 0.07575757575757576,
+      "ndcg": 0.42080338500822784,
+      "mrr": 1.0
+    },
+    {
+      "profile": "cand_software",
+      "k": 10,
+      "precision": 1.0,
+      "recall": 0.15151515151515152,
+      "ndcg": 0.581727169407215,
+      "mrr": 1.0
+    },
+    {
+      "profile": "cand_civil",
+      "k": 5,
+      "precision": 1.0,
+      "recall": 0.07352941176470588,
+      "ndcg": 0.656819036744215,
+      "mrr": 1.0
+    },
+    {
+      "profile": "cand_civil",
+      "k": 10,
+      "precision": 1.0,
+      "recall": 0.14705882352941177,
+      "ndcg": 0.5955189330975375,
+      "mrr": 1.0
+    }
+  ],
+  "semantic_better_precision@5": true
+}

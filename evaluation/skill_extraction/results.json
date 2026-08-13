@@ -1,0 +1,390 @@
+{
+  "metrics": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "n": 100
+  },
+  "samples": [
+    {
+      "job_id": "jl_31983f987e3dad",
+      "gold": [
+        "autocad",
+        "communication",
+        "leadership",
+        "nextjs",
+        "sales"
+      ],
+      "pred": [
+        "autocad",
+        "communication",
+        "leadership",
+        "nextjs",
+        "sales"
+      ]
+    },
+    {
+      "job_id": "jl_f17c3c717d3a8d",
+      "gold": [
+        "autocad",
+        "communication",
+        "problem_solving",
+        "teamwork"
+      ],
+      "pred": [
+        "autocad",
+        "communication",
+        "problem_solving",
+        "teamwork"
+      ]
+    },
+    {
+      "job_id": "jl_e6c3285997a9ca",
+      "gold": [
+        "english",
+        "sales"
+      ],
+      "pred": [
+        "english",
+        "sales"
+      ]
+    },
+    {
+      "job_id": "jl_fe1f74e858d731",
+      "gold": [
+        "sales"
+      ],
+      "pred": [
+        "sales"
+      ]
+    },
+    {
+      "job_id": "jfl_da8ca8eaeeb94007",
+      "gold": [
+        "angular",
+        "git",
+        "postgresql",
+        "react"
+      ],
+      "pred": [
+        "angular",
+        "git",
+        "postgresql",
+        "react"
+      ]
+    },
+    {
+      "job_id": "jfl_ff0341f6c28e440d",
+      "gold": [
+        "communication",
+        "javascript",
+        "mongodb",
+        "nodejs",
+        "postgresql",
+        "python",
+        "react",
+        "typescript"
+      ],
+      "pred": [
+        "communication",
+        "javascript",
+        "mongodb",
+        "nodejs",
+        "postgresql",
+        "python",
+        "react",
+        "typescript"
+      ]
+    },
+    {
+      "job_id": "jfl_942d470c173b400d",
+      "gold": [
+        "javascript",
+        "mysql",
+        "nextjs",
+        "python",
+        "rust"
+      ],
+      "pred": [
+        "javascript",
+        "mysql",
+        "nextjs",
+        "python",
+        "rust"
+      ]
+    },
+    {
+      "job_id": "jfl_cd1611e0c2e24b28",
+      "gold": [
+        "arabic",
+        "communication",
+        "english",
+        "french",
+        "nextjs",
+        "project_management",
+        "r",
+        "sales"
+      ],
+      "pred": [
+        "arabic",
+        "communication",
+        "english",
+        "french",
+        "nextjs",
+        "project_management",
+        "r",
+        "sales"
+      ]
+    },
+    {
+      "job_id": "jfl_79a67b2e3f254bfe",
+      "gold": [
+        "javascript",
+        "llms",
+        "python",
+        "typescript"
+      ],
+      "pred": [
+        "javascript",
+        "llms",
+        "python",
+        "typescript"
+      ]
+    },
+    {
+      "job_id": "jfl_56e534f5c1ce46b7",
+      "gold": [
+        "aws",
+        "azure",
+        "communication",
+        "english",
+        "gcp",
+        "git",
+        "go",
+        "javascript",
+        "llms",
+        "nextjs",
+        "nodejs",
+        "postgresql",
+        "problem_solving",
+        "python",
+        "react",
+        "teamwork",
+        "typescript"
+      ],
+      "pred": [
+        "aws",
+        "azure",
+        "communication",
+        "english",
+        "gcp",
+        "git",
+        "go",
+        "javascript",
+        "llms",
+        "nextjs",
+        "nodejs",
+        "postgresql",
+        "problem_solving",
+        "python",
+        "react",
+        "teamwork",
+        "typescript"
+      ]
+    },
+    {
+      "job_id": "jfl_3015406f5af04f37",
+      "gold": [
+        "communication",
+        "git",
+        "java",
+        "kotlin",
+        "problem_solving",
+        "teamwork"
+      ],
+      "pred": [
+        "communication",
+        "git",
+        "java",
+        "kotlin",
+        "problem_solving",
+        "teamwork"
+      ]
+    },
+    {
+      "job_id": "jfl_2f2994f0ceba4c46",
+      "gold": [
+        "communication"
+      ],
+      "pred": [
+        "communication"
+      ]
+    },
+    {
+      "job_id": "jfl_27226c80283d4910",
+      "gold": [
+        "autocad",
+        "communication",
+        "marketing",
+        "project_management"
+      ],
+      "pred": [
+        "autocad",
+        "communication",
+        "marketing",
+        "project_management"
+      ]
+    },
+    {
+      "job_id": "jfl_90ffe744362e49a5",
+      "gold": [
+        "machine_learning",
+        "project_management",
+        "python",
+        "pytorch",
+        "teamwork",
+        "tensorflow"
+      ],
+      "pred": [
+        "machine_learning",
+        "project_management",
+        "python",
+        "pytorch",
+        "teamwork",
+        "tensorflow"
+      ]
+    },
+    {
+      "job_id": "jfl_734ba251fb474f69",
+      "gold": [
+        "arabic",
+        "autocad",
+        "communication",
+        "english",
+        "french",
+        "leadership",
+        "problem_solving",
+        "teamwork"
+      ],
+      "pred": [
+        "arabic",
+        "autocad",
+        "communication",
+        "english",
+        "french",
+        "leadership",
+        "problem_solving",
+        "teamwork"
+      ]
+    },
+    {
+      "job_id": "jfl_29fe67a8b13247b5",
+      "gold": [
+        "communication",
+        "marketing"
+      ],
+      "pred": [
+        "communication",
+        "marketing"
+      ]
+    },
+    {
+      "job_id": "jfl_cca69a99cf194a1d",
+      "gold": [
+        "git",
+        "rust"
+      ],
+      "pred": [
+        "git",
+        "rust"
+      ]
+    },
+    {
+      "job_id": "jfl_5f77f266081a4e29",
+      "gold": [
+        "communication",
+        "csharp",
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "problem_solving",
+        "sql",
+        "teamwork"
+      ],
+      "pred": [
+        "communication",
+        "csharp",
+        "css",
+        "git",
+        "html",
+        "javascript",
+        "problem_solving",
+        "sql",
+        "teamwork"
+      ]
+    },
+    {
+      "job_id": "jfl_3f267d37135b4614",
+      "gold": [
+        "ci_cd",
+        "communication",
+        "git",
+        "problem_solving",
+        "swift",
+        "teamwork"
+      ],
+      "pred": [
+        "ci_cd",
+        "communication",
+        "git",
+        "problem_solving",
+        "swift",
+        "teamwork"
+      ]
+    },
+    {
+      "job_id": "jfl_fe1a8d0436ad4ce6",
+      "gold": [
+        "aws",
+        "ci_cd",
+        "communication",
+        "docker",
+        "git",
+        "go",
+        "java",
+        "javascript",
+        "kotlin",
+        "kubernetes",
+        "leadership",
+        "mysql",
+        "nodejs",
+        "postgresql",
+        "project_management",
+        "python",
+        "swift",
+        "teamwork"
+      ],
+      "pred": [
+        "aws",
+        "ci_cd",
+        "communication",
+        "docker",
+        "git",
+        "go",
+        "java",
+        "javascript",
+        "kotlin",
+        "kubernetes",
+        "leadership",
+        "mysql",
+        "nodejs",
+        "postgresql",
+        "project_management",
+        "python",
+        "swift",
+        "teamwork"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+
+# Data (keep structure, ignore contents)
+raw_data/*
+!raw_data/.gitkeep
+!raw_data/README.md
+processed_data/*
+!processed_data/.gitkeep
+!processed_data/README.md
+!processed_data/sample_jobs.json
+
+# Models / caches
+models/job_classifier/*.joblib
+models/embeddings/
+*.pt
+*.bin
+
+# Node
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+.coverage
+htmlcov/
+careerai.db
+*.db-journal

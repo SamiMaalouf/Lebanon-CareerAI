@@ -1,0 +1,40 @@
+[
+  {
+    "job_id": "sample_001",
+    "source": "sample_fixture",
+    "source_url": "https://example.local/jobs/sample_001",
+    "collection_date": "2026-08-10",
+    "job_title": "Junior Automation Engineer",
+    "company": "Debbas Group",
+    "industry": "Electrical",
+    "location": "Beirut",
+    "employment_type": "Full-time",
+    "education": "Bachelor's in Electrical or Mechatronics Engineering",
+    "experience": "Entry-level",
+    "languages": ["English", "Arabic"],
+    "description": "We are seeking a junior automation engineer with Siemens PLC and TIA Portal experience. SCADA knowledge preferred.",
+    "requirements": "Requirements: PLC, Siemens PLC, TIA Portal. Bachelor's degree.",
+    "preferred_skills": "Preferred: SCADA, HMI, SolidWorks",
+    "job_category": "Automation Engineering",
+    "experience_level": "Entry-level"
+  },
+  {
+    "job_id": "sample_002",
+    "source": "sample_fixture",
+    "source_url": "https://example.local/jobs/sample_002",
+    "collection_date": "2026-08-10",
+    "job_title": "Python Backend Developer",
+    "company": "Murex",
+    "industry": "Software",
+    "location": "Beirut",
+    "employment_type": "Full-time",
+    "education": "Bachelor's in Computer Science",
+    "experience": "0-2 years",
+    "languages": ["English"],
+    "description": "Backend role requiring Python, SQL and Docker. FastAPI and AWS preferred.",
+    "requirements": "Requirements: Python, SQL, Git.",
+    "preferred_skills": "Preferred: Docker, AWS, FastAPI",
+    "job_category": "Software Engineering",
+    "experience_level": "0-2 years"
+  }
+]

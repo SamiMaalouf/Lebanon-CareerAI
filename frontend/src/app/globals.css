@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #f7f1e8;
+  --sand: #e8dcc8;
+  --cedar: #8b3a2b;
+  --ink: #2a241c;
+  --sea: #1f4e5f;
+}
+
+body {
+  color: var(--ink);
+  background: var(--cream);
+  font-family: var(--font-sans), "Source Sans 3", sans-serif;
+}
+
+.page-shell {
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(139, 58, 43, 0.12), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 0%, rgba(31, 78, 95, 0.10), transparent 50%),
+    linear-gradient(180deg, #f7f1e8 0%, #efe6d6 45%, #f7f1e8 100%);
+}
+
+.font-display {
+  font-family: var(--font-display), Fraunces, Georgia, serif;
+}
