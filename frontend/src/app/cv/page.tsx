@@ -6,6 +6,7 @@ import { Panel } from "../../components/Charts";
 import {
   apiPost,
   apiUpload,
+  loadProfile,
   saveProfile,
   type CandidateProfile,
 } from "../../lib/api";
@@ -67,6 +68,11 @@ export default function CVPage() {
   const [coach, setCoach] = useState<CoachResponse | null>(null);
   const [coachBusy, setCoachBusy] = useState(false);
   const [coachError, setCoachError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const saved = loadProfile();
+    if (saved) setProfile(saved);
+  }, []);
 
   useEffect(() => {
     if (!profile) {
@@ -343,7 +349,12 @@ export default function CVPage() {
                           key={item.skill}
                           className="rounded-lg border border-cedar/10 bg-cream px-3 py-2 text-sm"
                         >
-                          <span className="font-medium text-ink">{item.skill}</span>
+                          <Link
+                            href={`/jobs?skill=${encodeURIComponent(item.skill)}&category=${encodeURIComponent(coachCategory)}`}
+                            className="font-medium text-ink underline decoration-cedar/30 hover:text-cedar"
+                          >
+                            {item.skill}
+                          </Link>
                           {item.action ? (
                             <p className="mt-1 text-ink/65">{item.action}</p>
                           ) : null}
@@ -368,6 +379,11 @@ export default function CVPage() {
                         >
                           <div className="flex flex-wrap items-center gap-2">
                             <span className="font-medium text-ink">{job.title}</span>
+                            {job.compatibility_score != null ? (
+                              <span className="rounded-full bg-sea/15 px-2 py-0.5 text-xs text-sea">
+                                {Math.round(job.compatibility_score)}% match
+                              </span>
+                            ) : null}
                             {job.is_internship ? (
                               <span className="rounded-full bg-sea/15 px-2 py-0.5 text-xs text-sea">
                                 Internship
@@ -425,6 +441,12 @@ export default function CVPage() {
                     className="rounded-lg border border-cedar/20 px-4 py-2 text-sm text-ink/70 hover:bg-sand"
                   >
                     Skill-gap table
+                  </Link>
+                  <Link
+                    href={`/jobs?forYou=1&category=${encodeURIComponent(coachCategory)}`}
+                    className="rounded-lg border border-cedar/20 px-4 py-2 text-sm text-ink/70 hover:bg-sand"
+                  >
+                    Ranked jobs for you
                   </Link>
                 </div>
                 {coach.disclaimer ? (

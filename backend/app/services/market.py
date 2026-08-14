@@ -70,6 +70,7 @@ class MarketService:
             "real_job_count": real_count,
             "synthetic_job_count": max(0, total - real_count),
             "internship_count": internship_count,
+            "non_internship_count": max(0, total - internship_count),
             "companies": companies,
             "industries": [{"name": i or "Unknown", "count": c} for i, c in industries],
             "categories": [{"name": i or "Other", "count": c} for i, c in categories],

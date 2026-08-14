@@ -1,10 +1,11 @@
 "use client";
 
 import { Suspense, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Panel, StatCard } from "../../components/Charts";
 import { apiGet } from "../../lib/api";
-import { ENGINEERING_CATEGORIES } from "../../lib/categories";
+import { ENGINEERING_CATEGORIES, canonicalEngineeringCategory } from "../../lib/categories";
+import { useDebouncedValue } from "../../lib/useDebouncedValue";
 
 const ENG_CATEGORIES = ["", ...ENGINEERING_CATEGORIES, "Other"];
 
@@ -66,16 +67,21 @@ function EligibilityPills({
 
 function InternshipsPageInner() {
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
   const [q, setQ] = useState("");
   const [category, setCategory] = useState("");
   const [page, setPage] = useState(1);
   const [data, setData] = useState<JobsResponse | null>(null);
   const [totalInternships, setTotalInternships] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  const debouncedQ = useDebouncedValue(q, 300);
 
   useEffect(() => {
-    const cat = searchParams.get("category") || "";
-    if (cat) setCategory(cat);
+    const cat = canonicalEngineeringCategory(searchParams.get("category") || "") ||
+      (searchParams.get("category") === "Other" ? "Other" : "");
+    setCategory(cat);
   }, [searchParams]);
 
   useEffect(() => {
@@ -90,13 +96,31 @@ function InternshipsPageInner() {
       page_size: "20",
       internship: "true",
     });
-    if (q.trim()) params.set("q", q.trim());
+    if (debouncedQ.trim()) params.set("q", debouncedQ.trim());
     if (category) params.set("category", category);
+    const ac = new AbortController();
     setError(null);
-    apiGet<JobsResponse>(`/api/jobs?${params.toString()}`)
+    setLoading(true);
+    apiGet<JobsResponse>(`/api/jobs?${params.toString()}`, { signal: ac.signal })
       .then(setData)
-      .catch((e) => setError(e.message));
-  }, [q, category, page]);
+      .catch((e) => {
+        if (e instanceof DOMException && e.name === "AbortError") return;
+        setError(e instanceof Error ? e.message : "Failed to load internships");
+      })
+      .finally(() => {
+        if (!ac.signal.aborted) setLoading(false);
+      });
+    return () => ac.abort();
+  }, [debouncedQ, category, page]);
+
+  function setCategoryAndUrl(next: string) {
+    setPage(1);
+    setCategory(next);
+    const params = new URLSearchParams();
+    if (next) params.set("category", next);
+    const qs = params.toString();
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+  }
 
   return (
     <div className="space-y-8">
@@ -110,7 +134,7 @@ function InternshipsPageInner() {
 
       <div className="grid gap-3 sm:grid-cols-2">
         <StatCard label="Internships in dataset" value={totalInternships ?? "—"} />
-        <StatCard label="Matching filters" value={data?.total ?? "—"} />
+        <StatCard label="Matching filters" value={loading ? "…" : (data?.total ?? "—")} />
       </div>
 
       <div className="grid gap-3 md:grid-cols-3">
@@ -126,10 +150,7 @@ function InternshipsPageInner() {
         <select
           className="rounded-lg border border-cedar/20 bg-cream px-3 py-2 text-sm"
           value={category}
-          onChange={(e) => {
-            setPage(1);
-            setCategory(e.target.value);
-          }}
+          onChange={(e) => setCategoryAndUrl(e.target.value)}
         >
           {ENG_CATEGORIES.map((c) => (
             <option key={c || "all"} value={c}>
@@ -140,9 +161,10 @@ function InternshipsPageInner() {
       </div>
 
       {error && <p className="text-sm text-cedar">{error}</p>}
+      {loading && <p className="text-sm text-ink/50">Loading internships…</p>}
 
       <div className="space-y-3">
-        {(data?.jobs || []).length === 0 && !error ? (
+        {!loading && (data?.jobs || []).length === 0 && !error ? (
           <Panel title="No internships found">
             <p className="text-sm text-ink/55">
               Try another category, or clear the search. This dataset currently has a small

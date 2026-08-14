@@ -24,7 +24,7 @@ SKIP_TITLE = re.compile(
     r"(?i)\b("
     r"customer success|account manager|sales intern|sales executive|"
     r"marketing|social media|community manager|hr intern|human resources|"
-    r"receptionist|call center|accountan|accoutant|bookkeep|cashier|"
+    r"receptionist|call center|accountant|bookkeep|cashier|"
     r"content creation|video content|irrigation|hvac technician|waiter|barista"
     r")\b"
 )

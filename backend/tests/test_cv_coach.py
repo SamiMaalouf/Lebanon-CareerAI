@@ -1,5 +1,9 @@
 from backend.app.services.cv_coach import CVCoach
-from backend.app.services.skill_filters import is_technical, skill_fits_category
+from backend.app.services.skill_filters import (
+    education_field_to_category,
+    is_technical,
+    skill_fits_category,
+)
 from data_pipeline.taxonomy.loader import load_taxonomy
 
 
@@ -15,6 +19,29 @@ def test_soft_skills_are_not_technical():
     assert skill_fits_category(tax, "python", "Software Engineering") is True
     c = CVCoach()
     assert c._skill_fits_category("autocad", "Software Engineering") is False
+
+
+def test_mechatronics_robotics_skills_fit_mech_and_elec():
+    tax = load_taxonomy()
+    assert tax.skills["mechatronics___robotics"]["name"] == "Mechatronics / Robotics"
+    assert skill_fits_category(tax, "ros", "Mechatronics Engineering") is True
+    assert skill_fits_category(tax, "sensors", "Mechanical Engineering") is True
+    assert skill_fits_category(tax, "control_systems", "Robotics") is True
+    assert skill_fits_category(tax, "actuators", "Electrical Engineering") is True
+    assert skill_fits_category(tax, "ros", "Software Engineering") is False
+
+
+def test_civil_skills_fit_civil_and_architecture():
+    tax = load_taxonomy()
+    assert skill_fits_category(tax, "revit", "Civil Engineering") is True
+    assert skill_fits_category(tax, "bim", "Architecture") is True
+    assert skill_fits_category(tax, "etabs", "Software Engineering") is False
+
+
+def test_education_field_maps_degrees_to_categories():
+    assert education_field_to_category("Computer Science") == "Software Engineering"
+    assert education_field_to_category("Computer Engineering") == "Software Engineering"
+    assert education_field_to_category("Mechanical Engineering") == "Mechanical Engineering"
 
 
 def test_cv_fixes_flags_missing_projects_and_major():

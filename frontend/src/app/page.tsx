@@ -8,6 +8,7 @@ import { apiGet } from "../lib/api";
 type Overview = {
   total_jobs: number;
   internship_count?: number;
+  non_internship_count?: number;
   companies: number;
   sources?: { name: string; count: number }[];
   collection_window?: {
@@ -23,18 +24,21 @@ type Overview = {
 const ACTIONS = [
   {
     href: "/cv",
+    step: "1",
     title: "Upload CV",
     body: "Parse your CV, then get Fix / Learn / Apply coaching for engineering roles.",
   },
   {
-    href: "/internships",
-    title: "Internships",
-    body: "Engineering internships from the Lebanese boards in this dataset.",
+    href: "/skill-gap",
+    step: "2",
+    title: "Skill Gap",
+    body: "Compare two career paths and see which tools Lebanese ads ask you to show.",
   },
   {
-    href: "/jobs",
-    title: "Browse jobs",
-    body: "Full-time and other engineering postings — not internships.",
+    href: "/jobs?forYou=1",
+    step: "3",
+    title: "Ranked jobs",
+    body: "Keyword vs semantic matches for your saved CV — not just a keyword browse.",
   },
 ];
 
@@ -64,6 +68,10 @@ export default function OverviewPage() {
     return <p className="text-ink/60">Loading market overview…</p>;
   }
 
+  const internships = data.internship_count ?? 0;
+  const engineeringJobs =
+    data.non_internship_count ?? Math.max(0, data.total_jobs - internships);
+
   const windowLabel = [
     data.collection_window?.collection_date_min,
     data.collection_window?.collection_date_max,
@@ -79,8 +87,8 @@ export default function OverviewPage() {
         </p>
         <h1 className="mt-2 font-display text-4xl text-cedar sm:text-5xl">Lebanon CareerAI</h1>
         <p className="mt-3 max-w-2xl text-ink/70">
-          Upload your CV, then see internships and jobs that match engineering demand in this
-          Lebanese dataset.
+          Upload your CV, see the skill gap for a target path, then ranked jobs from this Lebanese
+          engineering dataset.
         </p>
         <div className="mt-4 flex flex-wrap gap-2 text-xs">
           <span
@@ -107,8 +115,8 @@ export default function OverviewPage() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <StatCard label="Engineering jobs" value={data.total_jobs} />
-        <StatCard label="Internships" value={data.internship_count ?? 0} />
+        <StatCard label="Engineering jobs" value={engineeringJobs} />
+        <StatCard label="Internships" value={internships} />
         <StatCard label="Companies" value={data.companies} />
         <StatCard label="Sources" value={(data.sources || []).length} />
       </div>
@@ -120,7 +128,8 @@ export default function OverviewPage() {
             href={action.href}
             className="rounded-2xl border border-cedar/15 bg-cream/80 p-5 shadow-sm transition hover:border-cedar/40 hover:bg-cream"
           >
-            <div className="font-display text-xl text-cedar">{action.title}</div>
+            <div className="text-xs uppercase tracking-wide text-sea">Step {action.step}</div>
+            <div className="mt-1 font-display text-xl text-cedar">{action.title}</div>
             <p className="mt-2 text-sm text-ink/65">{action.body}</p>
           </Link>
         ))}

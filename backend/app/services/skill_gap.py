@@ -39,6 +39,8 @@ CV_EXAMPLES = {
     "machine_learning": "Machine Learning — Skills; one notebook under Projects",
     "scada": "SCADA — Skills; lab or internship line under Experience",
     "revit": "Revit — Skills; BIM course model under Projects",
+    "etabs": "ETABS — Skills; structural model under Projects",
+    "bim": "BIM — Skills; Revit/course model under Projects",
     "excel": "Excel — Skills; internship or lab analysis under Experience",
 }
 

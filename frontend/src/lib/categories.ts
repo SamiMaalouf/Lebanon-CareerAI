@@ -22,6 +22,16 @@ const CATEGORY_ALIASES: Record<string, EngineeringCategory> = {
   "Computer Engineering": "Software Engineering",
 };
 
+export function canonicalEngineeringCategory(raw: string | null | undefined): string {
+  if (!raw) return "";
+  const mapped = CATEGORY_ALIASES[raw] || raw;
+  if ((ENGINEERING_CATEGORIES as readonly string[]).includes(mapped)) {
+    return mapped;
+  }
+  if (mapped === "Other") return "Other";
+  return "";
+}
+
 export function defaultEngineeringCategory(
   preferred?: string[] | null,
   fallback: EngineeringCategory = "Software Engineering"

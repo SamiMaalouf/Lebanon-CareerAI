@@ -13,6 +13,7 @@ export default function MarketPage() {
   const [languages, setLanguages] = useState<{ name: string; count: number }[]>([]);
   const [categories, setCategories] = useState<{ name: string; count: number }[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     Promise.all([
@@ -33,10 +34,12 @@ export default function MarketPage() {
         setLanguages(lang.languages);
         setCategories(cat.categories);
       })
-      .catch((e) => setError(e.message));
+      .catch((e) => setError(e.message))
+      .finally(() => setLoading(false));
   }, []);
 
   if (error) return <p className="text-cedar">{error}</p>;
+  if (loading) return <p className="text-ink/60">Loading market charts…</p>;
 
   return (
     <div className="space-y-8">

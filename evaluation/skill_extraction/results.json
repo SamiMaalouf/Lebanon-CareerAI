@@ -3,7 +3,9 @@
     "precision": 1.0,
     "recall": 1.0,
     "f1": 1.0,
-    "n": 100
+    "n": 100,
+    "gold_source": "auto_extractor_circular",
+    "note": "Gold labels were produced by the same extractor (circular). Do not cite as research-grade F1. Add manual skill_ids to evaluation/skill_extraction/gold.json."
   },
   "samples": [
     {

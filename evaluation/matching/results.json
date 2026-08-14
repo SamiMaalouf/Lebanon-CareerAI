@@ -119,5 +119,7 @@
       "mrr": 1.0
     }
   ],
-  "semantic_better_precision@5": true
+  "semantic_better_precision@5": true,
+  "label_source": "heuristic",
+  "note": "Relevance labels are generated from category/title/skill overlap, not human raters. Treat P@K as a relative keyword-vs-semantic comparison, not an absolute quality claim."
 }

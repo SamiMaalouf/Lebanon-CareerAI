@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Panel } from "../../components/Charts";
 import { apiPost, loadProfile, type CandidateProfile } from "../../lib/api";
-import { ENGINEERING_CATEGORIES } from "../../lib/categories";
+import { ENGINEERING_CATEGORIES, defaultEngineeringCategory } from "../../lib/categories";
 
 type GapSkill = {
   skill: string;
@@ -24,6 +24,7 @@ type GapResponse = {
   sparse?: boolean;
   possessed: GapSkill[];
   missing: GapSkill[];
+  roadmap?: { skill: string; priority?: string; why?: string }[];
   disclaimer: string;
 };
 
@@ -65,6 +66,8 @@ function PathColumn({ data }: { data: GapResponse }) {
   const note = sparseNote(data);
   const possessed = data.possessed || [];
   const missing = data.missing || [];
+  const jobsHref = (skill: string) =>
+    `/jobs?skill=${encodeURIComponent(skill)}&category=${encodeURIComponent(data.category)}`;
   return (
     <div className="space-y-3">
       <div>
@@ -88,7 +91,12 @@ function PathColumn({ data }: { data: GapResponse }) {
             {missing.map((s) => (
               <li key={s.skill} className="rounded-lg border border-cedar/10 bg-cream px-3 py-2 text-sm">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-medium text-ink">{s.skill}</span>
+                  <Link
+                    href={jobsHref(s.skill)}
+                    className="font-medium text-ink underline decoration-cedar/30 hover:text-cedar"
+                  >
+                    {s.skill}
+                  </Link>
                   {s.priority ? (
                     <span className="rounded-full bg-cedar/10 px-2 py-0.5 text-xs text-cedar">
                       {s.priority}
@@ -125,7 +133,16 @@ export default function SkillGapPage() {
 
   useEffect(() => {
     const saved = loadProfile();
-    if (saved?.skills?.length) setProfile(saved);
+    if (!saved?.skills?.length) return;
+    setProfile(saved);
+    const a = defaultEngineeringCategory(saved.target_categories, "Software Engineering");
+    setCategoryA(a);
+    const others = (saved.target_categories || [])
+      .map((c) => defaultEngineeringCategory([c], a))
+      .filter((c) => c !== a);
+    const fallbackB = a === "Web Development" ? "Software Engineering" : "Web Development";
+    const b = others[0] || fallbackB;
+    setCategoryB(b === a ? (ENGINEERING_CATEGORIES.find((c) => c !== a) || fallbackB) : b);
   }, []);
 
   useEffect(() => {
@@ -239,6 +256,35 @@ export default function SkillGapPage() {
                 <PathColumn data={dataA} />
                 <PathColumn data={dataB} />
               </div>
+              {(dataA.roadmap || []).length > 0 ? (
+                <Panel
+                  title={`Learn next · ${dataA.category}`}
+                  subtitle="Highest-priority missing skills from this dataset — not a guaranteed curriculum"
+                >
+                  <ol className="list-decimal space-y-2 pl-5 text-sm">
+                    {dataA.roadmap!.slice(0, 6).map((step) => (
+                      <li key={step.skill}>
+                        <Link
+                          href={`/jobs?skill=${encodeURIComponent(step.skill)}&category=${encodeURIComponent(dataA.category)}`}
+                          className="font-medium text-ink underline decoration-cedar/30 hover:text-cedar"
+                        >
+                          {step.skill}
+                        </Link>
+                        {step.priority ? (
+                          <span className="ml-2 text-xs text-cedar">{step.priority}</span>
+                        ) : null}
+                        {step.why ? <p className="mt-0.5 text-xs text-ink/60">{step.why}</p> : null}
+                      </li>
+                    ))}
+                  </ol>
+                  <Link
+                    href={`/jobs?forYou=1&category=${encodeURIComponent(dataA.category)}`}
+                    className="mt-4 inline-block text-sm text-sea underline"
+                  >
+                    See ranked {dataA.category} jobs for your CV
+                  </Link>
+                </Panel>
+              ) : null}
               <p className="text-xs text-ink/55">{dataA.disclaimer}</p>
             </>
           )}

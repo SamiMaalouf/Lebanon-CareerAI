@@ -97,7 +97,10 @@ def list_jobs(
         query = query.filter(Job.is_internship.is_(False))
     if skill:
         sid = taxonomy.canonical_id(skill) or taxonomy._slug(skill)
-        query = query.join(JobSkill).filter(JobSkill.skill_id == sid)
+        skill_job_ids = (
+            db.query(JobSkill.job_id).filter(JobSkill.skill_id == sid).distinct()
+        )
+        query = query.filter(Job.id.in_(skill_job_ids))
 
     total = query.count()
     rows = (

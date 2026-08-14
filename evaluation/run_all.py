@@ -37,27 +37,49 @@ from evaluation.metrics import (
     write_json,
 )
 
+SKILL_GOLD_PATH = ROOT / "evaluation" / "skill_extraction" / "gold.json"
+
+
+def _manual_skill_gold() -> dict[str, set[str]]:
+    if not SKILL_GOLD_PATH.exists():
+        return {}
+    raw = json.loads(SKILL_GOLD_PATH.read_text(encoding="utf-8"))
+    if not isinstance(raw, list):
+        return {}
+    out: dict[str, set[str]] = {}
+    for row in raw:
+        jid = row.get("job_id")
+        gold = row.get("gold_skills") or row.get("gold") or []
+        if jid and gold:
+            out[str(jid)] = {str(s) for s in gold}
+    return out
+
 
 def eval_skill_extraction(jobs: list[dict], n: int = 100) -> dict:
     tax = load_taxonomy()
     extractor = JobExtractor(tax)
+    manual = _manual_skill_gold()
+    gold_source = "manual" if manual else "auto_extractor_circular"
     pairs = []
     labeled = []
-    for job in jobs[:n]:
+    selected = [j for j in jobs if j.get("job_id") in manual] if manual else jobs[:n]
+    if not selected:
+        selected = jobs[:n]
+        gold_source = "auto_extractor_circular"
+    for job in selected[:n]:
         cleaned = clean_job(job, tax)
         extracted = extractor.extract_job(cleaned)
-        # gold = skills seeded in synthetic requirements/preferred + taxonomy match
-        gold_names = set()
-        text = " ".join(
-            filter(
-                None,
-                [job.get("requirements"), job.get("preferred_skills"), job.get("description")],
+        if job.get("job_id") in manual:
+            gold = set(manual[job["job_id"]])
+        else:
+            text = " ".join(
+                filter(
+                    None,
+                    [job.get("requirements"), job.get("preferred_skills"), job.get("description")],
+                )
             )
-        )
-        # approximate gold via extractor on requirements-only is circular; use template skills if present
-        # For synthetic jobs we re-extract from requirements string which enumerates skills.
-        gold_skills = extractor.extract_skills(text)
-        gold = {s["skill_id"] for s in gold_skills}
+            gold_skills = extractor.extract_skills(text)
+            gold = {s["skill_id"] for s in gold_skills}
         pred = {s["skill_id"] for s in extracted.get("extracted_skills") or []}
         pairs.append((gold, pred))
         labeled.append(
@@ -68,8 +90,18 @@ def eval_skill_extraction(jobs: list[dict], n: int = 100) -> dict:
             }
         )
     metrics = average_prf(pairs)
-    write_json(ROOT / "evaluation" / "skill_extraction" / "results.json", {"metrics": metrics, "samples": labeled[:20]})
-    # also write a gold template file for manual annotation workflow
+    metrics["gold_source"] = gold_source
+    metrics["n"] = len(pairs)
+    if gold_source == "auto_extractor_circular":
+        metrics["note"] = (
+            "Gold labels were produced by the same extractor (circular). "
+            "Do not cite as research-grade F1. Add manual skill_ids to "
+            "evaluation/skill_extraction/gold.json."
+        )
+    write_json(
+        ROOT / "evaluation" / "skill_extraction" / "results.json",
+        {"metrics": metrics, "samples": labeled[:20]},
+    )
     write_json(
         ROOT / "evaluation" / "skill_extraction" / "label_template.json",
         [{"job_id": j["job_id"], "job_title": j["job_title"], "gold_skills": []} for j in jobs[:n]],
@@ -293,6 +325,11 @@ def eval_matching(jobs: list[dict], labeled: list[dict] | None = None) -> dict:
 
         metrics["semantic_better_precision@5"] = (
             metrics["semantic"]["precision@5"] >= metrics["keyword"]["precision@5"]
+        )
+        metrics["label_source"] = "heuristic"
+        metrics["note"] = (
+            "Relevance labels are generated from category/title/skill overlap, not human raters. "
+            "Treat P@K as a relative keyword-vs-semantic comparison, not an absolute quality claim."
         )
         write_json(ROOT / "evaluation" / "matching" / "results.json", metrics)
         save_eval_to_db("matching", metrics)

@@ -50,15 +50,23 @@ async def analyze_cv(file: UploadFile = File(...)):
     data = await file.read()
     if len(data) > 8 * 1024 * 1024:
         raise HTTPException(status_code=400, detail="File too large (max 8MB)")
-    profile = analyzer.analyze_file(file.filename, data)
-    return profile
+    try:
+        return analyzer.analyze_file(file.filename, data)
+    except Exception:
+        raise HTTPException(
+            status_code=400,
+            detail="Could not parse this file. Try a text-based PDF, DOCX, or paste the CV text.",
+        )
 
 
 @router.post("/analyze-text")
 def analyze_text(payload: TextIn):
     if not payload.text.strip():
         raise HTTPException(status_code=400, detail="text is required")
-    return analyzer.analyze_text(payload.text)
+    try:
+        return analyzer.analyze_text(payload.text)
+    except Exception:
+        raise HTTPException(status_code=400, detail="Could not analyze this CV text.")
 
 
 @router.post("/coach")

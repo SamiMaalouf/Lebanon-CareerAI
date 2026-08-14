@@ -1,23 +1,44 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8001";
 
-export async function apiGet<T>(path: string): Promise<T> {
-  const res = await fetch(`${API_BASE}${path}`, { cache: "no-store" });
+async function errorMessage(res: Response, fallback: string): Promise<string> {
+  const text = await res.text();
+  try {
+    const parsed = JSON.parse(text) as { detail?: unknown };
+    if (typeof parsed.detail === "string") return parsed.detail;
+    if (Array.isArray(parsed.detail)) {
+      return parsed.detail
+        .map((item) =>
+          typeof item === "string"
+            ? item
+            : item && typeof item === "object" && "msg" in item
+              ? String((item as { msg: unknown }).msg)
+              : JSON.stringify(item)
+        )
+        .join("; ");
+    }
+  } catch {
+    /* raw text */
+  }
+  return text || fallback;
+}
+
+export async function apiGet<T>(path: string, init?: RequestInit): Promise<T> {
+  const res = await fetch(`${API_BASE}${path}`, { cache: "no-store", ...init });
   if (!res.ok) {
-    const text = await res.text();
-    throw new Error(text || `Request failed: ${res.status}`);
+    throw new Error(await errorMessage(res, `Request failed: ${res.status}`));
   }
   return res.json();
 }
 
-export async function apiPost<T>(path: string, body: unknown): Promise<T> {
+export async function apiPost<T>(path: string, body: unknown, init?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
+    ...init,
   });
   if (!res.ok) {
-    const text = await res.text();
-    throw new Error(text || `Request failed: ${res.status}`);
+    throw new Error(await errorMessage(res, `Request failed: ${res.status}`));
   }
   return res.json();
 }
@@ -27,8 +48,7 @@ export async function apiUpload<T>(path: string, file: File): Promise<T> {
   form.append("file", file);
   const res = await fetch(`${API_BASE}${path}`, { method: "POST", body: form });
   if (!res.ok) {
-    const text = await res.text();
-    throw new Error(text || `Upload failed: ${res.status}`);
+    throw new Error(await errorMessage(res, `Upload failed: ${res.status}`));
   }
   return res.json();
 }

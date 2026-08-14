@@ -99,7 +99,9 @@ uvicorn backend.app.main:app --reload --port 8001
 
 API docs: [http://localhost:8001/docs](http://localhost:8001/docs)
 
-> If port 8000 is free on your machine you may use `--port 8000` and set `NEXT_PUBLIC_API_URL=http://localhost:8000`.
+Copy [`.env.example`](.env.example) to `.env` and [`frontend/.env.example`](frontend/.env.example) to `frontend/.env.local`. The frontend defaults to `http://localhost:8001` if `NEXT_PUBLIC_API_URL` is unset.
+
+Docker Compose publishes the API on host port **8001** (`8001:8000`).
 
 ### 6. Start frontend
 
@@ -113,13 +115,14 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Dashboard pages
 
-1. **Overview** — KPIs, top skills, experiment snapshot  
+1. **Overview** — KPIs and the CV → Skill Gap → Ranked jobs path  
 2. **Job Market** — skills, locations, industries, education, experience, languages  
-3. **Career Explorer** — category deep-dive  
-4. **CV Analyzer** — PDF/DOCX/TXT upload (ephemeral)  
-5. **Job Matching** — keyword vs semantic ranked lists  
-6. **Skill Gap** — possessed vs missing  
-7. **Career Roadmap** — prioritized skills with dataset-backed “why”
+3. **Engineering Jobs** — browse filters plus **For you** (keyword vs semantic match)  
+4. **Internships / Companies** — internship list and named employers  
+5. **CV Analyzer** — PDF/DOCX/TXT upload (ephemeral) and CV Coach  
+6. **Skill Gap** — two-path comparison plus a short learn-next roadmap  
+
+The skill taxonomy is strongest on software, mechanical, electrical, and mechatronics/robotics. Civil / Architecture has a thin tool tree (Revit, BIM, ETABS, …) for ads in those categories.
 
 ## Matching methodology
 
@@ -143,13 +146,13 @@ Normalized skill Jaccard + required-skill coverage.
 
 | Experiment | Metrics |
 |------------|---------|
-| Skill extraction | Precision, Recall, F1 on labeled subset |
+| Skill extraction | Precision, Recall, F1 — **circular auto-eval unless `gold.json` is filled** |
 | Job classification | Accuracy, macro P/R/F1, confusion matrix |
-| Matching | Precision@K, Recall@K, F1@K, NDCG@K, MRR |
+| Matching | Precision@K, Recall@K, F1@K, NDCG@K, MRR on **heuristic** labels |
 
 Primary research question: **Does semantic matching retrieve more relevant Lebanese jobs than keyword matching?**
 
-Results are written to `evaluation/*/results.json` and exposed at `GET /api/evaluation/summary`.
+Results are written to `evaluation/*/results.json` and exposed at `GET /api/evaluation/summary`. Skill-extraction F1 of 1.0 in the checked-in file is not a research claim.
 
 ## Data collection ethics
 
@@ -163,19 +166,19 @@ Results are written to `evaluation/*/results.json` and exposed at `GET /api/eval
 
 - Synthetic demo corpus approximates Lebanese employers/locations for offline development; replace with permitted real collections for research claims
 - Classification metrics on synthetic data can be inflated — always re-evaluate on manually labeled real postings
+- Skill-extraction F1 in auto-eval is circular (same extractor as gold) unless `evaluation/skill_extraction/gold.json` is filled
+- Matching P@K uses heuristic relevance labels, not human raters
 - Salary often missing; geography only reported when enough data exists
 - Network hiring and unpublished roles are outside this dataset
 
 ## Demo script (≈3 minutes)
 
-1. Overview — show job count and top skills  
-2. Career Explorer — Automation Engineering skill demand  
-3. Upload / paste a Mechatronics CV  
-4. Job Matching — compare keyword vs semantic ranks  
-5. Skill Gap + Roadmap — PLC, TIA Portal, SCADA priorities  
-6. Evaluation snapshot — Precision@5 keyword vs semantic  
+1. Overview — job vs internship counts, then Step 1–3  
+2. Upload / paste a CV — Fix / Learn / Apply, compatibility scores  
+3. Skill Gap — two paths plus Learn next  
+4. Jobs → **For you** — keyword vs semantic ranks  
+5. Browse internships or a skill deep-link from Coach  
 
 ## License / academic use
 
-Built for a Tech Fellows–style research project. Cite sources of any real postings you collect. Keep redistribution compliant with each site’s terms.
-"# Career-AI" 
+Built for a Tech Fellows–style research project. Cite sources of any real postings you collect. Keep redistribution compliant with each site’s terms. 

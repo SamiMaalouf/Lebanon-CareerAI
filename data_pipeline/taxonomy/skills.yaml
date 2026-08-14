@@ -198,6 +198,25 @@ categories:
     Robotics:
       aliases: [industrial robots, collaborative robots]
 
+  Civil / Architecture:
+    aliases: [civil engineering, architecture, architectural, structural engineering]
+    Revit:
+      aliases: [autodesk revit]
+    ETABS:
+      aliases: []
+    STAAD:
+      aliases: [staad pro, staad.pro]
+    SAP2000:
+      aliases: [sap 2000]
+    BIM:
+      aliases: [building information modeling]
+    SketchUp:
+      aliases: [sketchup]
+    Structural Analysis:
+      aliases: [structural design]
+    Surveying:
+      aliases: [land surveying]
+
   Cybersecurity:
     aliases: [information security, infosec]
     Network Security:

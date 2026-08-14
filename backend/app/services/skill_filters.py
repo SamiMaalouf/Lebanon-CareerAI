@@ -32,7 +32,11 @@ SOFTWARE_SKILL_ROOTS = {
     "cybersecurity",
 }
 MECH_CATS = {"Mechanical Engineering", "Mechatronics Engineering"}
-MECH_SKILL_ROOTS = {"mechanical_engineering", "mechatronics", "industrial_automation"}
+MECH_SKILL_ROOTS = {
+    "mechanical_engineering",
+    "mechatronics___robotics",
+    "industrial_automation",
+}
 ELEC_CATS = {
     "Electrical Engineering",
     "Electronics Engineering",
@@ -41,12 +45,40 @@ ELEC_CATS = {
 }
 ELEC_SKILL_ROOTS = {
     "electrical_engineering",
-    "electronics",
+    "mechatronics___robotics",
     "industrial_automation",
-    "mechatronics",
 }
 CIVIL_CATS = {"Civil Engineering", "Architecture"}
-CIVIL_SKILL_ROOTS = {"civil_engineering", "architecture", "mechanical_engineering"}
+CIVIL_SKILL_ROOTS = {"civil___architecture", "mechanical_engineering"}
+
+# Degree / education field strings → job categories used in matching.
+DEGREE_TO_CATEGORY = {
+    "computer science": "Software Engineering",
+    "computer engineering": "Software Engineering",
+    "cce": "Software Engineering",
+    "informatics": "Software Engineering",
+    "information technology": "Software Engineering",
+    "software engineering": "Software Engineering",
+    "web development": "Web Development",
+    "data science": "Data Science",
+    "artificial intelligence": "Artificial Intelligence",
+    "cybersecurity": "Cybersecurity",
+    "electrical engineering": "Electrical Engineering",
+    "electronics engineering": "Electronics Engineering",
+    "mechanical engineering": "Mechanical Engineering",
+    "mechatronics engineering": "Mechatronics Engineering",
+    "automation engineering": "Automation Engineering",
+    "robotics": "Robotics",
+    "civil engineering": "Civil Engineering",
+    "architecture": "Architecture",
+}
+
+
+def education_field_to_category(field: str | None) -> str | None:
+    if not field or not str(field).strip():
+        return None
+    mapped = canonical_category(str(field).strip()) or str(field).strip()
+    return DEGREE_TO_CATEGORY.get(mapped.lower(), mapped)
 
 SOFT_NAMES = {
     "communication",
