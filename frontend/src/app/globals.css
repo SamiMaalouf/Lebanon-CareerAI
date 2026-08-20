@@ -8,6 +8,8 @@
   --cedar: #8b3a2b;
   --ink: #2a241c;
   --sea: #1f4e5f;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
 }
 
 body {

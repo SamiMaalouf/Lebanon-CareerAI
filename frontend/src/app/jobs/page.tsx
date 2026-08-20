@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Panel, SimpleBarChart, StatCard } from "../../components/Charts";
+import { RankedMatchList, type RankedJob } from "../../components/RankedMatchList";
 import { apiGet, apiPost, loadProfile, type CandidateProfile } from "../../lib/api";
 import { ENGINEERING_CATEGORIES, canonicalEngineeringCategory } from "../../lib/categories";
 import { useDebouncedValue } from "../../lib/useDebouncedValue";
@@ -41,19 +42,6 @@ type CareerInsights = {
   education: { name: string; count: number }[];
   experience: { name: string; count: number }[];
   related_careers: { name: string; score: number }[];
-};
-
-type RankedJob = {
-  job_id: string;
-  title: string;
-  company?: string | null;
-  location?: string | null;
-  category?: string | null;
-  compatibility_score?: number;
-  matched_skills?: string[];
-  missing_required?: string[];
-  matched_count?: number;
-  listed_count?: number;
 };
 
 type MatchResponse = {
@@ -188,10 +176,12 @@ function JobsPageInner() {
           projects: profile.projects,
           target_categories: profile.target_categories,
           summary: profile.summary,
+          internship_mentions: profile.internship_mentions,
         },
         method: "both",
-        limit: 12,
+        limit: 24,
         category: category || undefined,
+        internship: false,
       },
       { signal: ac.signal }
     )
@@ -214,59 +204,6 @@ function JobsPageInner() {
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : "Failed to load job");
     }
-  }
-
-  function RankedList({ title, jobs }: { title: string; jobs: RankedJob[] }) {
-    return (
-      <Panel title={title}>
-        {jobs.length ? (
-          <ul className="space-y-2">
-            {jobs.map((job) => {
-              const matched = job.matched_count;
-              const listed = job.listed_count;
-              const showCover =
-                typeof matched === "number" && typeof listed === "number" && listed > 0;
-              return (
-              <li key={job.job_id}>
-                <button
-                  type="button"
-                  onClick={() => openJob(job.job_id)}
-                  className="w-full rounded-lg border border-cedar/15 bg-cream px-3 py-2 text-left text-sm hover:border-cedar/40"
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="font-medium text-ink">{job.title}</span>
-                    {job.compatibility_score != null ? (
-                      <span className="text-xs text-sea">
-                        {Math.round(job.compatibility_score)}% match
-                      </span>
-                    ) : null}
-                  </div>
-                  <p className="mt-0.5 text-xs text-ink/55">
-                    {[job.company, job.location, job.category].filter(Boolean).join(" · ")}
-                  </p>
-                  {showCover ? (
-                    <p className="mt-1 text-xs text-ink/70">
-                      Covers {matched} of {listed} tool{listed === 1 ? "" : "s"} listed in this ad
-                      {listed === 1
-                        ? " — a short list scores high if you have that one tool"
-                        : ""}
-                    </p>
-                  ) : null}
-                  {(job.matched_skills || []).length > 0 && (
-                    <p className="mt-1 text-xs text-sea">
-                      You match: {job.matched_skills!.slice(0, 6).join(", ")}
-                    </p>
-                  )}
-                </button>
-              </li>
-              );
-            })}
-          </ul>
-        ) : (
-          <p className="text-sm text-ink/50">No ranked jobs for this profile yet.</p>
-        )}
-      </Panel>
-    );
   }
 
   return (
@@ -411,8 +348,16 @@ function JobsPageInner() {
               {match && !matchBusy && (
                 <>
                   <div className="grid gap-6 lg:grid-cols-2">
-                    <RankedList title="Keyword match" jobs={match.keyword || []} />
-                    <RankedList title="Semantic match" jobs={match.semantic || []} />
+                    <RankedMatchList
+                      title="Keyword match"
+                      jobs={match.keyword || []}
+                      onSelect={openJob}
+                    />
+                    <RankedMatchList
+                      title="Semantic match"
+                      jobs={match.semantic || []}
+                      onSelect={openJob}
+                    />
                   </div>
                   {match.disclaimer ? (
                     <p className="text-xs text-ink/50">{match.disclaimer}</p>

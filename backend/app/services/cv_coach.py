@@ -5,13 +5,12 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from sqlalchemy.orm import Session, joinedload
+from sqlalchemy.orm import Session
 
 from backend.app.db.models import Job
 from backend.app.services.matching import MatchingEngine
 from backend.app.services.skill_filters import (
     CATEGORY_FALLBACK,
-    SOFTWARE_CATS,
     canonical_category,
     is_technical,
     skill_fits_category,
@@ -28,13 +27,7 @@ SKIP_TITLE = re.compile(
     r"content creation|video content|irrigation|hvac technician|waiter|barista"
     r")\b"
 )
-SOFTWARE_TITLE = re.compile(
-    r"(?i)\b("
-    r"software|developer|devops|programmer|backend|frontend|full.?stack|"
-    r"data (scien|engineer|analyst)|machine learning|\bai\b|cyber|"
-    r"security engineer|embedded|firmware|web develop|mobile (dev|engineer)"
-    r")\b"
-)
+
 RELATED_HINTS = {
     "react": "javascript",
     "nextjs": "javascript",
@@ -238,50 +231,47 @@ class CVCoach:
         target_category: str,
         limit: int = 3,
     ) -> list[dict[str, Any]]:
-        q = db.query(Job).options(joinedload(Job.skills))
-        if category:
-            q = q.filter(Job.job_category == category)
-        jobs = q.all()
-        scored: list[dict[str, Any]] = []
-        for job in jobs:
-            title = job.job_title or ""
+        ranked = self.matcher.rank_jobs(
+            db,
+            candidate,
+            method="keyword",
+            limit=40,
+            category=category or None,
+            internship=None,
+        )
+        apply = [r for r in (ranked.get("keyword") or []) if r.get("band") == "apply"]
+        apply.sort(
+            key=lambda x: (
+                not x.get("is_internship"),
+                -float(x.get("compatibility_score") or 0),
+            )
+        )
+        out: list[dict[str, Any]] = []
+        for row in apply:
+            title = row.get("title") or ""
             if SKIP_TITLE.search(title):
                 continue
-            kw = self.matcher.keyword_score(candidate, job)
-            intern = bool(getattr(job, "is_internship", False))
-            matched = self._tech_names(kw.get("matched_skills") or [], target_category)
-            missing = self._tech_names(kw.get("missing_required") or [], target_category)
-            tech_score = 100.0 * (
-                (len(matched) / max(1, len(matched) + len(missing))) if (matched or missing) else 0.0
-            )
+            matched = self._tech_names(row.get("matched_skills") or [], target_category)
+            missing = self._tech_names(row.get("missing_skills") or [], target_category)
             if not matched:
-                if intern and target_category in SOFTWARE_CATS and SOFTWARE_TITLE.search(title):
-                    pass  # e.g. DevOps intern with no overlapping tools yet
-                else:
-                    continue
-            scored.append(
+                continue
+            out.append(
                 {
-                    "job_id": job.job_id,
-                    "title": job.job_title,
-                    "company": job.company,
-                    "location": job.location,
-                    "category": job.job_category,
-                    "source_url": job.source_url,
-                    "is_internship": intern,
-                    "compatibility_score": round(tech_score, 1),
+                    "job_id": row.get("job_id"),
+                    "title": row.get("title"),
+                    "company": row.get("company"),
+                    "location": row.get("location"),
+                    "category": row.get("category"),
+                    "source_url": row.get("source_url"),
+                    "is_internship": bool(row.get("is_internship")),
+                    "compatibility_score": row.get("compatibility_score"),
                     "matched_skills": matched[:6],
                     "missing_skills": missing[:4],
                 }
             )
-        # Prefer internships that actually share tools, then higher technical overlap
-        scored.sort(
-            key=lambda x: (
-                not (x["is_internship"] and x["matched_skills"]),
-                -len(x["matched_skills"]),
-                -float(x["compatibility_score"] or 0),
-            ),
-        )
-        return scored[:limit]
+            if len(out) >= limit:
+                break
+        return out
 
     def analyze(self, db: Session, candidate: dict[str, Any], category: str) -> dict[str, Any]:
         category = canonical_category(category) or category

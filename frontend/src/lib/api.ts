@@ -65,6 +65,7 @@ export type CandidateProfile = {
   project_hint_lines?: string[];
   target_categories?: string[];
   summary?: string | null;
+  internship_mentions?: string[] | number | null;
 };
 
 const PROFILE_KEY = "careerai_profile";

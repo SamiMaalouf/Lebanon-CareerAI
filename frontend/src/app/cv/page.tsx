@@ -147,7 +147,7 @@ export default function CVPage() {
   }
 
   const jobsHref = `/jobs?category=${encodeURIComponent(coachCategory)}`;
-  const internshipsHref = `/internships?category=${encodeURIComponent(coachCategory)}`;
+  const internshipsHref = `/internships?forYou=1&category=${encodeURIComponent(coachCategory)}`;
 
   return (
     <div className="space-y-8">
@@ -400,7 +400,7 @@ export default function CVPage() {
                           )}
                           {(job.missing_skills || []).length > 0 && (
                             <p className="mt-1 text-xs text-ink/60">
-                              Add if true: {job.missing_skills!.join(", ")}
+                              This ad also wants: {job.missing_skills!.join(", ")}
                             </p>
                           )}
                           {job.source_url ? (

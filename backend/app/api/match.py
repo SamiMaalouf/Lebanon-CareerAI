@@ -18,6 +18,7 @@ class CandidateProfile(BaseModel):
     projects: list[str] = Field(default_factory=list)
     target_categories: list[str] = Field(default_factory=list)
     summary: str | None = None
+    internship_mentions: list[str] | int | None = None
 
 
 class MatchRequest(BaseModel):
@@ -25,6 +26,7 @@ class MatchRequest(BaseModel):
     method: str = "both"
     limit: int = Field(20, ge=1, le=50)
     category: str | None = None
+    internship: bool | None = None
 
 
 @router.post("")
@@ -39,4 +41,5 @@ def match_jobs(payload: MatchRequest, db: Session = Depends(get_db)):
         method=payload.method,
         limit=payload.limit,
         category=payload.category,
+        internship=payload.internship,
     )

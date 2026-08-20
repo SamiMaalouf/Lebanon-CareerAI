@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from typing import Any
 
 import numpy as np
@@ -46,6 +47,15 @@ EXP_RANK = {
     "5+ years": 5,
 }
 
+JUNIOR_LEVELS = {"Internship", "Entry-level", "0-2 years"}
+STRETCH_LEVELS = {"2-5 years", "5+ years"}
+# "architect" as a seniority word, not the Architecture career.
+STRETCH_TITLE = re.compile(
+    r"(?:^|[^a-z])(?:senior|sr\.?|lead|principal|staff)(?:[^a-z]|$)|"
+    r"\barchitects?\b",
+    re.IGNORECASE,
+)
+
 
 class MatchingEngine:
     def __init__(self):
@@ -82,6 +92,7 @@ class MatchingEngine:
             "matched_count": len(have & pool),
             "listed_count": len(pool),
             "coverage_of": "required" if required else "listed",
+            "missing_skills": self._skill_names(pool - have),
         }
 
     def keyword_score(self, candidate: dict[str, Any], job: Job) -> dict[str, Any]:
@@ -219,6 +230,57 @@ class MatchingEngine:
         ]
         return "\n".join(p for p in parts if p)
 
+    def candidate_is_junior(self, candidate: dict[str, Any]) -> bool:
+        exp = candidate.get("experience_level")
+        if exp in JUNIOR_LEVELS:
+            return True
+        if exp:
+            return False
+        mentions = candidate.get("internship_mentions")
+        if isinstance(mentions, list) and mentions:
+            return True
+        if isinstance(mentions, int) and mentions > 0:
+            return True
+        return False
+
+    def job_is_stretch(self, job: Job, junior_cv: bool) -> bool:
+        if not junior_cv:
+            return False
+        if bool(getattr(job, "is_internship", False)):
+            return False
+        exp = getattr(job, "experience_level", None)
+        if exp in STRETCH_LEVELS:
+            return True
+        title = getattr(job, "job_title", None) or ""
+        return bool(STRETCH_TITLE.search(title))
+
+    def annotate_match(
+        self, candidate: dict[str, Any], job: Job, score: dict[str, Any]
+    ) -> dict[str, Any]:
+        junior = self.candidate_is_junior(candidate)
+        stretch = self.job_is_stretch(job, junior)
+        seniority = "stretch" if stretch else "fit"
+        matched = int(score.get("matched_count") or 0)
+        listed = int(score.get("listed_count") or 0)
+        cover = (matched / listed) if listed else 0.0
+        band = "apply" if cover >= 0.5 and seniority == "fit" else "learn"
+        intern = bool(getattr(job, "is_internship", False))
+        return {
+            **score,
+            "is_internship": intern,
+            "experience_level": getattr(job, "experience_level", None),
+            "source_url": getattr(job, "source_url", None),
+            "seniority": seniority,
+            "band": band,
+        }
+
+    def _sort_key(self, row: dict[str, Any]) -> tuple:
+        stretch = 1 if row.get("seniority") == "stretch" else 0
+        junior_job = row.get("is_internship") or row.get("experience_level") in JUNIOR_LEVELS
+        early = 0 if junior_job else 1
+        score = -float(row.get("compatibility_score") or 0)
+        return (stretch, early, score)
+
     def rank_jobs(
         self,
         db: Session,
@@ -226,11 +288,16 @@ class MatchingEngine:
         method: str = "both",
         limit: int = 20,
         category: str | None = None,
+        internship: bool | None = None,
     ) -> dict[str, Any]:
         q = db.query(Job).options(joinedload(Job.skills), joinedload(Job.embedding))
         if category:
             category = canonical_category(category) or category
             q = q.filter(Job.job_category == category)
+        if internship is True:
+            q = q.filter(Job.is_internship.is_(True))
+        elif internship is False:
+            q = q.filter(Job.is_internship.is_(False))
         jobs = q.all()
         profile_text = self._candidate_text(candidate)
         cand_vec = self.embedder.encode_one(profile_text) if method in ("semantic", "both") else None
@@ -247,13 +314,13 @@ class MatchingEngine:
             }
             if method in ("keyword", "both"):
                 kw = self.keyword_score(candidate, job)
-                keyword_ranked.append({**base, **kw})
+                keyword_ranked.append(self.annotate_match(candidate, job, {**base, **kw}))
             if method in ("semantic", "both"):
                 job_vec = None
                 if job.embedding is not None:
                     job_vec = np.asarray(job.embedding.embedding, dtype=np.float32)
                 sem = self.semantic_score(candidate, job, cand_vec=cand_vec, job_vec=job_vec)
-                semantic_ranked.append({**base, **sem})
+                semantic_ranked.append(self.annotate_match(candidate, job, {**base, **sem}))
 
         keyword_ranked = [r for r in keyword_ranked if r.get("matched_skills")]
         semantic_ranked = [
@@ -261,13 +328,14 @@ class MatchingEngine:
             for r in semantic_ranked
             if r.get("matched_skills") or r.get("has_technical_overlap")
         ]
-        keyword_ranked.sort(key=lambda x: x["compatibility_score"], reverse=True)
-        semantic_ranked.sort(key=lambda x: x["compatibility_score"], reverse=True)
+        keyword_ranked.sort(key=self._sort_key)
+        semantic_ranked.sort(key=self._sort_key)
         return {
             "disclaimer": (
                 "Compatibility Score is an analytical estimate based on the collected "
                 "Lebanese job dataset and does not represent a guarantee of employment."
             ),
+            "candidate_junior": self.candidate_is_junior(candidate),
             "keyword": keyword_ranked[:limit],
             "semantic": semantic_ranked[:limit],
         }
