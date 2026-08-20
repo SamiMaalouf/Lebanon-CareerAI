@@ -44,7 +44,6 @@ frontend/          Next.js dashboard
 raw_data/          raw postings (gitignored)
 processed_data/    cleaned exports + sample fixtures
 models/            trained classifiers
-reports/           LebNet final report + 3-minute video script
 ```
 
 ## Quick start
@@ -207,15 +206,11 @@ Results live in `evaluation/*/results.json` and `GET /api/evaluation/summary`. S
 
 ## Demo (~3 minutes)
 
-Spoken script: [`reports/video_script_3min.md`](reports/video_script_3min.md)
-
 1. Overview — job vs internship counts, then Step 1–3  
 2. CV Coach — Fix / Learn / Apply  
 3. Skill Gap — two paths plus Learn next (optional if short on time)  
 4. Jobs → **For you** — keyword vs semantic, Ready to apply / Learn first  
 5. Internships → **For you** — open one source URL  
-
-Submission write-up: [`reports/LebNet_Tech_Fellows_Final_Report.md`](reports/LebNet_Tech_Fellows_Final_Report.md)
 
 ## License / academic use
 
