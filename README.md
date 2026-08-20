@@ -204,14 +204,6 @@ Results live in `evaluation/*/results.json` and `GET /api/evaluation/summary`. S
 - Salary often missing; geography only reported when enough data exists
 - Hashing fallback embeddings are not true semantics
 
-## Demo (~3 minutes)
-
-1. Overview — job vs internship counts, then Step 1–3  
-2. CV Coach — Fix / Learn / Apply  
-3. Skill Gap — two paths plus Learn next (optional if short on time)  
-4. Jobs → **For you** — keyword vs semantic, Ready to apply / Learn first  
-5. Internships → **For you** — open one source URL  
-
 ## License / academic use
 
 Built for a Tech Fellows–style research project. Cite sources of any real postings you collect. Keep redistribution compliant with each site’s terms.
